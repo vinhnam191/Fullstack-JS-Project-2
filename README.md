@@ -25,9 +25,7 @@ POSTGRES_DB=udacity
 POSTGRES_USER=udacityuser
 POSTGRES_PASSWORD=admin123
 POSTGRES_DB_TEST=fantasy_worlds
-
 BCRYPT_PASSWORD = udacity-bcrypt
 SALT_ROUND= 5
-
 SECRET_TOKEN = helloUdacity!
 ENV = dev

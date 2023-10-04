@@ -98,4 +98,18 @@ describe("Testing User Enpoints", () => {
     const result = await axios.post(url, singUpUser, config);
     expect(result.status).toBe(200);
   });
+
+  it("should show user info and require token", async () => {
+    const login = await axios.post(loginURL, payloadLogin);
+    const loginToken = login.data.token;
+    let config = {
+      headers: { Authorization: `Bearer ${loginToken}` },
+    };
+    const userId = 1;
+    const indexValue = await axios.get(
+      `${backendServer}/users/${userId}`,
+      config
+    );
+    expect(indexValue.data.data.id).toEqual(userId);
+  });
 });
